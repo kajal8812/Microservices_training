@@ -11,28 +11,27 @@ import org.springframework.stereotype.Component;
 @Component
 class YourBusinessClass {
 
-	@Autowired
 	Dependency1 d1;
 
-	@Autowired
 	Dependency2 d2;
 
-	/*	@Autowired
-		public YourBusinessClass(Dependency1 d1, Dependency2 d2) {
-			super();
-			this.d1 = d1;
-			this.d2 = d2;
-		}
-	
-			@Autowired
-			public void setD1(Dependency1 d1) {
-				this.d1 = d1;
-			}
-		
-			@Autowired
-			public void setD2(Dependency1 d2) {
-				this.d2 = d2;
-			}*/
+	@Autowired
+	public YourBusinessClass(Dependency1 d1, Dependency2 d2) {
+		super();
+		System.out.println("h");
+		this.d1 = d1;
+		this.d2 = d2;
+	}
+
+	/*					@Autowired
+				public void setD1(Dependency1 d1) {
+					this.d1 = d1;
+				}
+			
+				@Autowired
+				public void setD2(Dependency1 d2) {
+					this.d2 = d2;
+				}*/
 
 	public String toString() {
 		return "using " + d1 + " and " + d2;
